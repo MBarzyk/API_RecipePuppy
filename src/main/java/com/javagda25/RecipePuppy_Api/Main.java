@@ -22,6 +22,6 @@ public class Main {
 
         recipiesMap.forEach((key, value) -> System.out.println(key + ". " + value.getTitle().trim()));
 
-        scannerContentLoader.letUserDecideIfHeLikesRecipies(recipiesMap);
+        scannerContentLoader.letUserDecideIfHeLikesRecipies(recipiesMap, recipeBuilder);
     }
 }

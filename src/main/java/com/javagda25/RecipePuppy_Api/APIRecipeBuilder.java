@@ -14,21 +14,19 @@ public class APIRecipeBuilder {
     }
 
     public void appendIngredients (List<IngredientsEnum> ingredientsEnumList) {
-        final Integer[] ints = new Integer[]{3};
         if (builder.toString().contains("{ingredients}")) {
             int pozycjaAmount = builder.indexOf("{ingredients}");
             builder.replace(pozycjaAmount, pozycjaAmount + 13, ingredientsEnumList.get(0).toString().toLowerCase());
             for (int i = 1; i < ingredientsEnumList.size(); i++) {
                 builder.append("," + ingredientsEnumList.get(i).toString().toLowerCase());
             }
-            builder.append("&p=" + String.valueOf(3));
+            builder.append("&p=3");
         }
     }
 
-    public void getNewPage () {
-        final Integer[] ints = new Integer[]{3};
+    public void getNewPage (int pageNumber) {
         int pozycjaAmount = builder.indexOf("&p=");
-        builder.replace(pozycjaAmount, pozycjaAmount + 4, String.valueOf(ints[0]++));
+        builder.replace(pozycjaAmount +3, pozycjaAmount + 4, String.valueOf(pageNumber));
     }
 
     public String compileURL () {

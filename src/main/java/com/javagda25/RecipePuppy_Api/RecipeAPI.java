@@ -1,7 +1,6 @@
 package com.javagda25.RecipePuppy_Api;
 
 import com.google.gson.Gson;
-import com.javagda25.RecipePuppy_Api.model.models_from_api.RecipeResult;
 import com.javagda25.RecipePuppy_Api.model.models_from_api.RecipeTitle;
 
 import java.io.IOException;
@@ -22,7 +21,7 @@ public class RecipeAPI {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("The link is broken!");
         }
 
         return recipeTitle;
