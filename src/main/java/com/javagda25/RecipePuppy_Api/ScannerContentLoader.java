@@ -50,6 +50,7 @@ public class ScannerContentLoader {
                     .collect(Collectors.toMap(o -> (ints[0]++), r -> r));
         } catch (NullPointerException e) {
             System.err.println("There weren't any more recipies available!");
+            System.exit(0);
         } return resultMap;
     }
 
@@ -87,7 +88,7 @@ public class ScannerContentLoader {
                     break;
                 case "no":
                     currentPage++;
-                    if (currentPage >= 10) {
+                    if (currentPage > 10) {
                         System.err.println("You are too picky! Screw it guys, I'm going home!!!");
                         System.exit(0);
                     } else {
