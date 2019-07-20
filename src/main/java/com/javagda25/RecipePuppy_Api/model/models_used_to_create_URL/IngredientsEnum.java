@@ -4,7 +4,6 @@ public enum IngredientsEnum {
     ONIONS,
     GARLIC,
     TOMATOES,
-    BASIL,
     CHICKEN,
     BEEF,
     PORK,
